@@ -8,7 +8,6 @@ import { EventsModule } from './events/events.module';
 @Module({
   imports: [
       TypeOrmModule.forRoot(typeOrmConfig),
-      EventsModule
   ],
   controllers: [AppController],
   providers: [AppService],
