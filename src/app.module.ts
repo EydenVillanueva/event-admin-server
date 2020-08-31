@@ -6,6 +6,7 @@ import {typeOrmConfig} from "./config/typeorm.config";
 import { EventsModule } from './events/events.module';
 import { InvitationsModule } from './invitations/invitations.module';
 import { RoomsModule } from './rooms/rooms.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { RoomsModule } from './rooms/rooms.module';
       InvitationsModule,
       EventsModule,
       RoomsModule,
+      AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
