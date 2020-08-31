@@ -1,6 +1,9 @@
 import {BaseEntity, Column, Entity, PrimaryGeneratedColumn} from "typeorm";
 
-export type UserRoleType = 'admin' | 'host';
+export enum UserRole {
+    ADMIN = "admin",
+    HOST = "host",
+}
 
 @Entity()
 export class User extends BaseEntity {
@@ -10,16 +13,16 @@ export class User extends BaseEntity {
     @Column({ type: 'varchar', length: 100 })
     name: string;
 
-    @Column({ type: 'enum' })
+    @Column({ type: 'varchar' })
     password: string;
 
     @Column({ type: 'varchar' })
     email: string;
 
     @Column({
-        type: 'enum',
-        enum: ['admin', 'host'],
-        default: 'host'
+        type: "enum",
+        enum: UserRole,
+        default: UserRole.HOST
     })
-    role: UserRoleType;
-};
+    role: UserRole
+}
