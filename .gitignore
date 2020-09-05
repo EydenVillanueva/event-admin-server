@@ -34,3 +34,4 @@ lerna-debug.log*
 
 .env
 /.vercel
+dist/tsconfig.build.tsbuildinfo
